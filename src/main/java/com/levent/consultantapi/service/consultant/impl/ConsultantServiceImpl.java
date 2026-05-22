@@ -1,5 +1,6 @@
 package com.levent.consultantapi.service.consultant.impl;
 
+import java.sql.DriverManager;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,6 +67,4 @@ public class ConsultantServiceImpl implements ConsultantService {
 
 		conn.close();
 	}
-}
-
 }
