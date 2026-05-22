@@ -1,0 +1,57 @@
+name: "HCL AppScan SAST"
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+
+  pull_request:
+
+permissions:
+  contents: read
+  security-events: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Run AppScan SAST scan
+        uses: HCL-TECH-SOFTWARE/appscan-sast-action@ASPL-1786
+        with:
+          asoc_key: ${{secrets.ASOC_KEY}}
+          asoc_secret: ${{secrets.ASOC_SECRET}}
+          application_id: 21b194f5-cea5-4ff6-a4d1-a03103a3e2fb
+          wait_for_analysis: true
+          
+          # Optional:
+          # true  -> generate SARIF + GitHub Security integration
+          # false -> disable SARIF generation
+          enable_github_security: true
+          
+      # Upload SARIF only if generated
+      - name: Upload SARIF to GitHub Security tab
+        if: always() && hashFiles('appscan-results.sarif') != ''
+        uses: github/codeql-action/upload-sarif@v4
+        with:
+          sarif_file: appscan-results.sarif
+
+      # Upload PR HTML report
+      - name: Upload PR report
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: appscan-pr-report
+          path: appscan-pr-report.html
+
+      # Upload build summary HTML report
+      - name: Upload Build report
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: appscan-build-report
+          path: appscan-build-summary-report.html
