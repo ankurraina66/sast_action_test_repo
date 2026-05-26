@@ -1,0 +1,17 @@
+name: "HCL AppScan SAST For AS360"
+on:
+  workflow_dispatch
+jobs:
+  scan:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run AppScan SAST scan
+        uses: HCL-TECH-SOFTWARE/appscan-sast-action@v1.0.8
+        with:
+          asoc_key: ${{secrets.ASOC_KEY}}
+          asoc_secret: ${{secrets.ASOC_SECRET}}
+          application_id: 1dd70de0-f756-4cd4-bad3-8354731ceff4
+          service_url: ${{secrets.SERVICE_URL}}
+          acceptssl: ${{secrets.ACCEPTSSL}}
