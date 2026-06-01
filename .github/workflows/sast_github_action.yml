@@ -30,6 +30,8 @@ jobs:
           application_id: 1dd70de0-f756-4cd4-bad3-8354731ceff4
           static_analysis_only: true
           wait_for_analysis: true
+          #To be set only for AS360 instance
+          report_url: ${{ vars.SERVICE_URL }}
           
           # Optional:
           # true  -> generate SARIF + GitHub Security integration
