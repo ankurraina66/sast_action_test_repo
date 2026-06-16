@@ -15,4 +15,3 @@ jobs:
           asoc_secret: ${{secrets.ASOC_SECRET}}
           application_id: 21b194f5-cea5-4ff6-a4d1-a03103a3e2fb
           static_analysis_only: true
-          wait_for_analysis: true
