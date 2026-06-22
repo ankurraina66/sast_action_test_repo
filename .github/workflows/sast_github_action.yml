@@ -17,3 +17,4 @@ jobs:
           acceptssl: ${{secrets.ACCEPTSSL}}
           service_url: ${{secrets.SERVICE_URL}}
           static_analysis_only: true
+          wait_for_analysis: true
