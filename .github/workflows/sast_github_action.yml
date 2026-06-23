@@ -16,4 +16,4 @@ jobs:
           application_id: 1dd70de0-f756-4cd4-bad3-8354731ceff4
           acceptssl: ${{secrets.ACCEPTSSL}}
           service_url: ${{secrets.SERVICE_URL}}
-          sast_scan_id: 5a221bd3-4d42-4e53-bf2b-36690c7697ff
+          sast_scan_id: 5a221bd3-4d42-4e53-bf2b-3669
