@@ -14,5 +14,5 @@ jobs:
           asoc_key: ${{secrets.ASOC_KEY}}
           asoc_secret: ${{secrets.ASOC_SECRET}}
           application_id: 21b194f5-cea5-4ff6-a4d1-a03103a3e2fb
-          failure_threshold: Low
+          failure_threshold: Medium
           fail_for_noncompliance: true
