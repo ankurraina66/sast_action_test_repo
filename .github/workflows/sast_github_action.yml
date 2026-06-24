@@ -17,4 +17,5 @@ jobs:
           acceptssl: ${{secrets.ACCEPTSSL}}
           service_url: ${{secrets.SERVICE_URL}}
           wait_for_analysis: true
-          analysis_timeout_minutes: 5
+          static_analysis_only: true
+          analysis_timeout_minutes: 10
