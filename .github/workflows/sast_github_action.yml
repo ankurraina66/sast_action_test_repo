@@ -18,4 +18,4 @@ jobs:
           service_url: ${{secrets.SERVICE_URL}}
           wait_for_analysis: true
           static_analysis_only: true
-          analysis_timeout_minutes: 10
+          fail_for_noncompliance: true
