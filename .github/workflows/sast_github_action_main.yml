@@ -17,4 +17,3 @@ jobs:
           failure_threshold: Critical
           fail_for_noncompliance: true
           wait_for_analysis: true
-          static_analysis_only: true
