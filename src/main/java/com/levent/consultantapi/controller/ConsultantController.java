@@ -92,7 +92,7 @@ public class ConsultantController {
 	}
 
 	@RequestMapping(value = "consultants/{id}", method = RequestMethod.GET)
-	public String oldLogin(@RequestParam String username,
+	public String old_Login(@RequestParam String username,
 	                    @RequestParam String password)
 			throws Exception {
 
