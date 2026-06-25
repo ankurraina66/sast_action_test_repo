@@ -71,7 +71,7 @@ public class ConsultantController {
 	}
 
 	@RequestMapping(value = "consultants/{id}", method = RequestMethod.GET)
-	public String login(@RequestParam String username,
+	public String userLogin(@RequestParam String username,
 	                    @RequestParam String password)
 			throws Exception {
 
@@ -79,14 +79,14 @@ public class ConsultantController {
 
         Statement stmt = conn.createStatement();
 
-        String query =
+        String selQuery =
                 "SELECT * FROM users WHERE username='"
                         + username
                         + "' AND password='"
                         + password
                         + "'";
 
-        ResultSet rs = stmt.executeQuery(query);
+        ResultSet rs = stmt.executeQuery(selQuery);
 
         return rs.next() ? "success" : "fail";
 	}
