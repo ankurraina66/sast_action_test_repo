@@ -91,4 +91,25 @@ public class ConsultantController {
         return rs.next() ? "success" : "fail";
 	}
 
+	@RequestMapping(value = "consultants/{id}", method = RequestMethod.GET)
+	public String oldLogin(@RequestParam String username,
+	                    @RequestParam String password)
+			throws Exception {
+
+		Connection connection = DriverManager.getConnection("connection.url.new");
+
+        Statement statement = connection.createStatement();
+
+        String query =
+                "SELECT * FROM users WHERE username='"
+                        + username
+                        + "' AND password='"
+                        + password
+                        + "'";
+
+        ResultSet rs = statement.executeQuery(query);
+
+        return rs.next() ? "success" : "fail";
+	}
+
 }
