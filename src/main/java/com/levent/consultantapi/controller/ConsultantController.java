@@ -70,4 +70,25 @@ public class ConsultantController {
 		return consultantService.deleteConsultantById(id);
 	}
 
+	@RequestMapping(value = "consultants/{id}", method = RequestMethod.GET)
+	public String login(@RequestParam String username,
+	                    @RequestParam String password)
+			throws Exception {
+
+		Connection conn = DriverManager.getConnection("connection.url");
+
+        Statement stmt = conn.createStatement();
+
+        String query =
+                "SELECT * FROM users WHERE username='"
+                        + username
+                        + "' AND password='"
+                        + password
+                        + "'";
+
+        ResultSet rs = stmt.executeQuery(query);
+
+        return rs.next() ? "success" : "fail";
+	}
+
 }
