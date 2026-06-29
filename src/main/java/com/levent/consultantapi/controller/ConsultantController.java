@@ -101,7 +101,7 @@ public class ConsultantController {
         Statement statement = connection.createStatement();
 
         String query =
-                "SELECT * FROM users WHERE username='"
+                "select * FROM users WHERE username='"
                         + username
                         + "' AND password='"
                         + password
