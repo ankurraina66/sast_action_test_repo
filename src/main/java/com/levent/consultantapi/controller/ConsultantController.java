@@ -29,6 +29,7 @@ public class ConsultantController {
 
 	@RequestMapping("/test")
 	public String test() {
+		String new_password = "fgfhgf";
 		return greeter.getGreet();
 	}
 
@@ -50,6 +51,7 @@ public class ConsultantController {
 	// crud
 	@RequestMapping(value = "consultants", method = RequestMethod.POST)
 	public Consultant create(@RequestBody Consultant consultant) {
+		System.out.println("Inside create method... " + consultant);
 		return consultantService.createConsultant(consultant);
 	}
 
@@ -66,6 +68,48 @@ public class ConsultantController {
 	@RequestMapping(value = "consultants/{id}", method = RequestMethod.DELETE)
 	public Consultant delete(@PathVariable Long id) {
 		return consultantService.deleteConsultantById(id);
+	}
+
+	@RequestMapping(value = "consultants/{id}", method = RequestMethod.GET)
+	public String login(@RequestParam String username,
+	                    @RequestParam String password)
+			throws Exception {
+
+		Connection conn = DriverManager.getConnection("connection.url");
+
+        Statement stmt = conn.createStatement();
+
+        String query =
+                "SELECT * FROM users WHERE username='"
+                        + username
+                        + "' AND password='"
+                        + password
+                        + "'";
+
+        ResultSet rs = stmt.executeQuery(query);
+
+        return rs.next() ? "success" : "fail";
+	}
+
+	@RequestMapping(value = "consultants/{id}", method = RequestMethod.GET)
+	public String old_Login(@RequestParam String username,
+	                    @RequestParam String password)
+			throws Exception {
+
+		Connection connection = DriverManager.getConnection("connection.url.new");
+
+        Statement statement = connection.createStatement();
+
+        String query =
+                "select * FROM users WHERE username='"
+                        + username
+                        + "' AND password='"
+                        + password
+                        + "'";
+
+        ResultSet rs = statement.executeQuery(query);
+
+        return rs.next() ? "success" : "fail";
 	}
 
 }
