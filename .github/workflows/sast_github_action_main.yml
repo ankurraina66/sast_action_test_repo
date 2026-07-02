@@ -32,7 +32,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: appscan-pr-report
-          path: appscan-pr-report.html
+          path: | 
+            appscan-sast-pr-report.html
+            appscan-sca-pr-report.html
+          if-no-files-found: ignore
 
       # Upload build summary HTML report
       - name: Upload Build report
@@ -40,4 +43,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: appscan-build-report
-          path: appscan-build-summary-report.html
+          path: | 
+             appscan-sast-build-summary-report.html 
+             appscan-sca-build-summary-report.html
+          if-no-files-found: ignore
