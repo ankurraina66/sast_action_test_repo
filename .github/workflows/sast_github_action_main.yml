@@ -1,6 +1,7 @@
-name: "HCL AppScan SAST"
+name: "HCL AppScan SAST for ASoC"
 on:
   workflow_dispatch:
+
   push:
     branches:
       - main
@@ -18,9 +19,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Run AppScan SAST scan
-        uses: HCL-TECH-SOFTWARE/appscan-sast-action@main
+        uses: HCL-TECH-SOFTWARE/appscan-sast-action@ASA-13165_GitHub_PR_Scan_Summary
         with:
           asoc_key: ${{secrets.ASOC_KEY}}
           asoc_secret: ${{secrets.ASOC_SECRET}}
           application_id: 21b194f5-cea5-4ff6-a4d1-a03103a3e2fb
-          incremental_scan: true
+          wait_for_analysis: true
+          static_analysis_only: true
+                   
+      # Upload PR HTML report
+      - name: Upload PR report
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: appscan-pr-report
+          path: | 
+            appscan-sast-pr-report.html
+            appscan-sca-pr-report.html
+          if-no-files-found: ignore
+
+      # Upload build summary HTML report
+      - name: Upload Build report
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: appscan-build-report
+          path: | 
+             appscan-sast-build-summary-report.html 
+             appscan-sca-build-summary-report.html
+          if-no-files-found: ignore
