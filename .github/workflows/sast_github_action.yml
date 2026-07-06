@@ -27,6 +27,7 @@ jobs:
           acceptssl: ${{secrets.ACCEPTSSL}}
           service_url: ${{secrets.SERVICE_URL}}
           wait_for_analysis: true
+          static_analysis_only: true
                    
       # Upload PR HTML report
       - name: Upload PR report
