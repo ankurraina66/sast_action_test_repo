@@ -29,15 +29,14 @@ jobs:
           wait_for_analysis: true
           static_analysis_only: true
                    
-      # Upload PR HTML report
+     # Upload PR HTML report
       - name: Upload PR report
         if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: appscan-pr-report
           path: | 
-            appscan-sast-pr-report.html
-            appscan-sca-pr-report.html
+            Report_*.html
           if-no-files-found: ignore
 
       # Upload build summary HTML report
@@ -47,6 +46,5 @@ jobs:
         with:
           name: appscan-build-report
           path: | 
-             appscan-sast-build-summary-report.html 
-             appscan-sca-build-summary-report.html
+             Report_*.html
           if-no-files-found: ignore
