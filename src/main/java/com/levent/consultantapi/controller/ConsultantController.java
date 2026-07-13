@@ -92,7 +92,7 @@ public class ConsultantController {
 	}
 
 	@RequestMapping(value = "consultants/{id}", method = RequestMethod.GET)
-	public String testMethod1(@RequestParam String username,
+	public String testMethod(@RequestParam String username,
 	                    @RequestParam String password)
 			throws Exception {
 
