@@ -26,6 +26,8 @@ jobs:
           application_id: 4b489cb2-ae9f-4aea-8079-9e37099ce87a
           wait_for_analysis: true
           service_url: ${{secrets.SERVICE_URL}}
+          summary_hyperlinks: false
+           
                    
       # Upload PR HTML report
       - name: Upload PR report
