@@ -29,6 +29,8 @@ jobs:
           wait_for_analysis: true
           static_analysis_only: true
           incremental_scan: true
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
                    
      # Upload PR HTML report
       - name: Upload PR report
