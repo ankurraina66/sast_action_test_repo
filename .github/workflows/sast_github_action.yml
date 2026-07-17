@@ -28,6 +28,7 @@ jobs:
           service_url: https://blmycldtl446131.nonprod.hclpnp.com
           wait_for_analysis: true
           static_analysis_only: true
+          incremental_scan: true
                    
      # Upload PR HTML report
       - name: Upload PR report
