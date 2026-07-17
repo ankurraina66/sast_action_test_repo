@@ -19,12 +19,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Run AppScan SAST scan
-        uses: HCL-TECH-SOFTWARE/appscan-sast-action@ASA-13165_GitHub_PR_Scan_Summary
+        uses: HCL-TECH-SOFTWARE/appscan-sast-action@main
         with:
           asoc_key: ${{secrets.ASOC_KEY}}
           asoc_secret: ${{secrets.ASOC_SECRET}}
           application_id: 1dd70de0-f756-4cd4-bad3-8354731ceff4
-          acceptssl: ${{secrets.ACCEPTSSL}}
+          acceptssl: true
           service_url: https://blmycldtl446131.nonprod.hclpnp.com
           wait_for_analysis: true
           static_analysis_only: true
