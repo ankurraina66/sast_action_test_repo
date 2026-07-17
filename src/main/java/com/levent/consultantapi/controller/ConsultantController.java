@@ -66,7 +66,7 @@ public class ConsultantController {
 	}
 
 	@RequestMapping(value = "consultants/{id}", method = RequestMethod.DELETE)
-	public Consultant delete(@PathVariable Long id) {
+	public Consultant newDelete(@PathVariable Long id) {
 		return consultantService.deleteConsultantById(id);
 	}
 
