@@ -26,3 +26,4 @@ jobs:
           application_id: 4b489cb2-ae9f-4aea-8079-9e37099ce87a
           service_url: https://eu.cloud.appscan.com 
           wait_for_analysis: true
+          static_analysis_only: true
