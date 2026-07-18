@@ -24,6 +24,6 @@ jobs:
           asoc_key: ${{secrets.ASOC_KEY}}
           asoc_secret: ${{secrets.ASOC_SECRET}}
           application_id: 4b489cb2-ae9f-4aea-8079-9e37099ce87a
-          service_url: https://eu.cloud.appscan.com 
+          service_url: ${{secrets.SERVICE_URL}} 
           wait_for_analysis: true
-          open_source_only: true
+          summary_hyperlinks: false
