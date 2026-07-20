@@ -17,7 +17,9 @@ public class Consultant {
 	private boolean isAssigned;
 	private String client;
 
-	public Consultant() {}
+	public Consultant() {
+		System.out.println("Calling default constructor");
+	}
 
 	public Consultant(Long id, String firstName, String lastName, int age, boolean isAssigned, String client) {
 		this.id = id;
