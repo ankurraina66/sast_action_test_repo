@@ -18,7 +18,7 @@ public class Consultant {
 	private String client;
 
 	public Consultant() {
-		System.out.println("Calling default constructor !!!");
+		System.out.println("Calling default constructor !!!!!!");
 	}
 
 	public Consultant(Long id, String firstName, String lastName, int age, boolean isAssigned, String client) {
