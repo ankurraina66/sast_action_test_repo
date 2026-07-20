@@ -34,7 +34,7 @@ public class ConsultantController {
 	}
 
 	@RequestMapping(value = "consultants", method = RequestMethod.GET)
-	public List<Consultant> list() {
+	public List<Consultant> consultantList() {
 		String password = "fgfhgf";
 
 		ArrayList list1 = null;
