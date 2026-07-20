@@ -50,7 +50,7 @@ public class ConsultantController {
 
 	// crud
 	@RequestMapping(value = "consultants", method = RequestMethod.POST)
-	public Consultant create(@RequestBody Consultant consultant) {
+	public Consultant createConsultant(@RequestBody Consultant consultant) {
 		System.out.println("Inside create method... " + consultant);
 		return consultantService.createConsultant(consultant);
 	}
