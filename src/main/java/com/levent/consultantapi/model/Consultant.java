@@ -78,7 +78,7 @@ public class Consultant {
 
 	@Override
 	public String toString() {
-		return String.format("Consultant Id: %s\nFirst Name: %s\nLast Name: %s\nAge: %d\nAssigned: %s\nClient: %s\n\n",
+		return String.format("Consultant Id is: %s\nFirst Name: %s\nLast Name: %s\nAge: %d\nAssigned: %s\nClient: %s\n\n",
 				id, firstName, lastName, age, isAssigned, isAssigned == true ? client : "N/A");
 	}
 
