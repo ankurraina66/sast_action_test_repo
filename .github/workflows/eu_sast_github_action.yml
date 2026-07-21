@@ -25,5 +25,5 @@ jobs:
           asoc_secret: ${{secrets.ASOC_SECRET}}
           application_id: 4b489cb2-ae9f-4aea-8079-9e37099ce87a
           service_url: ${{secrets.SERVICE_URL}}
-          summary_hyperlinks: false
+          scan_info_hyperlinks: false
           wait_for_analysis: false
