@@ -26,4 +26,4 @@ jobs:
           application_id: 4b489cb2-ae9f-4aea-8079-9e37099ce87a
           service_url: ${{secrets.SERVICE_URL}}
           scan_info_hyperlinks: false
-          wait_for_analysis: false
+          wait_for_analysis: true
