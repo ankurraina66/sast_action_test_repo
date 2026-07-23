@@ -1,4 +1,4 @@
-name: "HCL AppScan SAST for AS360"
+name: "HCL AppScan SAST for ASoC"
 on:
   workflow_dispatch:
 
@@ -14,25 +14,20 @@ permissions:
 
 jobs:
   scan:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Run AppScan SAST scan
-        uses: HCL-TECH-SOFTWARE/appscan-sast-action@main
+        uses: HCL-TECH-SOFTWARE/appscan-sast-action@ASA-13165_GitHub_PR_Scan_Summary
         with:
           asoc_key: ${{secrets.ASOC_KEY}}
           asoc_secret: ${{secrets.ASOC_SECRET}}
-          application_id: 1dd70de0-f756-4cd4-bad3-8354731ceff4
-          acceptssl: true
-          service_url: https://blmycldtl446131.nonprod.hclpnp.com
+          application_id: 21b194f5-cea5-4ff6-a4d1-a03103a3e2fb
           wait_for_analysis: true
-          static_analysis_only: true
-          incremental_scan: true
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          open_source_only: true
                    
-     # Upload PR HTML report
+      # Upload PR HTML report
       - name: Upload PR report
         if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
