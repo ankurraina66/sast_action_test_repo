@@ -17,7 +17,9 @@ public class Consultant {
 	private boolean isAssigned;
 	private String client;
 
-	public Consultant() {}
+	public Consultant() {
+		System.out.println("Calling default constructor...");
+	}
 
 	public Consultant(Long id, String firstName, String lastName, int age, boolean isAssigned, String client) {
 		this.id = id;
@@ -78,7 +80,7 @@ public class Consultant {
 
 	@Override
 	public String toString() {
-		return String.format("Consultant Id: %s\nFirst Name: %s\nLast Name: %s\nAge: %d\nAssigned: %s\nClient: %s\n\n",
+		return String.format("Consultant Identifier: %s\nFirst Name: %s\nLast Name: %s\nAge: %d\nAssigned: %s\nClient: %s\n\n",
 				id, firstName, lastName, age, isAssigned, isAssigned == true ? client : "N/A");
 	}
 

@@ -14,11 +14,9 @@ import com.levent.consultantapi.service.ConsultantService;
 public class ConsultantServiceImpl implements ConsultantService {
 
 	String old_pwd = "admin@2021";
-	String old_username_1 = "ajjnana";
+	String old_username_1 = "nuwan";
 
-	String db_username = "oracle_user";
-	String db_password = "oracle_password";
-	
+	String username = "martha_admin777";
 	@Autowired
 	private ConsultantRepository consultantRepository;
 
