@@ -16,7 +16,7 @@ public class ConsultantServiceImpl implements ConsultantService {
 	String old_pwd = "admin@2021";
 	String old_username_1 = "ajjnana";
 
-	String username = "wayne_bridge";
+	String username = "super_user1";
 	@Autowired
 	private ConsultantRepository consultantRepository;
 
