@@ -27,3 +27,4 @@ jobs:
           service_url: ${{secrets.SERVICE_URL}}
           wait_for_analysis: true
           scan_info_hyperlinks: false
+          github_token: ${{github.token}}
