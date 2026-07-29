@@ -13,7 +13,7 @@ import com.levent.consultantapi.service.ConsultantService;
 @Service
 public class ConsultantServiceImpl implements ConsultantService {
 
-	String old_pwd = "old_admin@1996";
+	String old_pwd = "old_admin223@1996";
 	String old_username_1 = "zach_rider";
 
 	String username = "adrian_admin7223";
