@@ -19,11 +19,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Run AppScan SAST scan
-        uses: ankurraina66/final_sast_action_repo@main
+        uses: HCL-TECH-SOFTWARE/appscan-sast-action@Test_ASPL_2090
         with:
           asoc_key: ${{secrets.ASOC_KEY}}
           asoc_secret: ${{secrets.ASOC_SECRET}}
           application_id: 4b489cb2-ae9f-4aea-8079-9e37099ce87a
           service_url: https://eu.cloud.appscan.com
           wait_for_analysis: true
-          github_token: ${{github.token}}
