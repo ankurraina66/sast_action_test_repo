@@ -1,16 +1,6 @@
-name: "HCL AppScan SAST for ASoC EU Instance"
+name: "HCL AppScan SAST for ASoC Instance"
 on:
   workflow_dispatch:
-
-  push:
-    branches:
-      - main
-  pull_request:
-
-permissions:
-  contents: read
-  pull-requests: write
-  issues: write
 
 jobs:
   scan:
@@ -19,10 +9,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Run AppScan SAST scan
-        uses: HCL-TECH-SOFTWARE/appscan-sast-action@Test_ASPL_2090
+        uses: HCL-TECH-SOFTWARE/appscan-sast-action@Issue_Fix_Main_Wait_For_Analysis_False
         with:
           asoc_key: ${{secrets.ASOC_KEY}}
           asoc_secret: ${{secrets.ASOC_SECRET}}
-          application_id: 4b489cb2-ae9f-4aea-8079-9e37099ce87a
-          service_url: https://eu.cloud.appscan.com
-          wait_for_analysis: true
+          application_id: 21b194f5-cea5-4ff6-a4d1-a03103a3e2fb
+          static_analysis_only: true
