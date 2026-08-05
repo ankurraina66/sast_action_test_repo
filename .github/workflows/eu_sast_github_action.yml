@@ -1,4 +1,4 @@
-name: "HCL AppScan SAST for ASoC Instance"
+name: "HCL AppScan SAST for AppScan 360 Instance"
 on:
   workflow_dispatch:
 
