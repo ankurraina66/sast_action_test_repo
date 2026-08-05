@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class EntryPoint {
 
 	public static void main(String[] args) {
+		System.out.println("Calling main method-------------->");
 		SpringApplication.run(EntryPoint.class, args);
 	}
 
