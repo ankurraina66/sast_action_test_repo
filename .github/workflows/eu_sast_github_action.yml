@@ -19,3 +19,4 @@ jobs:
           acceptssl: true
           fail_for_noncompliance: false
           failure_threshold: high
+          wait_for_analysis: true
