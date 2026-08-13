@@ -26,3 +26,23 @@ jobs:
           application_id: 4b489cb2-ae9f-4aea-8079-9e37099ce87a
           service_url: https://eu.cloud.appscan.com
           wait_for_analysis: true
+      - name: Print repository diagnostic information
+        shell: bash
+        run: |
+         echo "===== REPOSITORY DIAGNOSTICS ====="
+         echo "GITHUB_SHA: $GITHUB_SHA"
+         echo "GITHUB_REF: $GITHUB_REF"
+         echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
+         echo "RUNNER_OS: $RUNNER_OS"
+         echo "RUNNER_ARCH: $RUNNER_ARCH"
+         echo "RUNNER_NAME: $RUNNER_NAME"
+         echo "===== GIT ====="
+         git --version
+         git status
+         git rev-parse HEAD
+         git log -1 --oneline
+         echo "===== FILE COUNT ====="
+         git ls-files | wc -l     
+         echo "===== SOURCE FILES ====="
+         git ls-files
+         echo "================================"
