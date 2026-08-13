@@ -27,22 +27,30 @@ jobs:
           service_url: https://eu.cloud.appscan.com
           wait_for_analysis: true
       - name: Print repository diagnostic information
-        shell: bash
+        shell: powershell
         run: |
-         echo "===== REPOSITORY DIAGNOSTICS ====="
-         echo "GITHUB_SHA: $GITHUB_SHA"
-         echo "GITHUB_REF: $GITHUB_REF"
-         echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
-         echo "RUNNER_OS: $RUNNER_OS"
-         echo "RUNNER_ARCH: $RUNNER_ARCH"
-         echo "RUNNER_NAME: $RUNNER_NAME"
-         echo "===== GIT ====="
-         git --version
-         git status
-         git rev-parse HEAD
-         git log -1 --oneline
-         echo "===== FILE COUNT ====="
-         git ls-files | wc -l     
-         echo "===== SOURCE FILES ====="
-         git ls-files
-         echo "================================"
+          Write-Host "===== REPOSITORY DIAGNOSTICS ====="
+          Write-Host "GITHUB_SHA: $env:GITHUB_SHA"
+          Write-Host "GITHUB_REF: $env:GITHUB_REF"
+          Write-Host "GITHUB_REPOSITORY: $env:GITHUB_REPOSITORY"
+          Write-Host "RUNNER_OS: $env:RUNNER_OS"
+          Write-Host "RUNNER_ARCH: $env:RUNNER_ARCH"
+          Write-Host "RUNNER_NAME: $env:RUNNER_NAME"
+          Write-Host "===== GIT ====="
+          git --version
+          git status
+          git rev-parse HEAD
+          git log -1 --oneline
+          Write-Host "===== GIT CONFIG ====="
+          Write-Host "core.autocrlf:"
+          git config --get core.autocrlf
+          Write-Host "core.eol:"
+          git config --get core.eol
+          Write-Host "core.safecrlf:"
+          git config --get core.safecrlf
+          Write-Host "===== FILE COUNT ====="
+          $fileCount = @(git ls-files).Count
+          Write-Host "Tracked files: $fileCount"
+          Write-Host "===== SOURCE FILES ====="
+          git ls-files
+          Write-Host "================================"
