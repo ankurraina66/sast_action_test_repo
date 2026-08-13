@@ -27,7 +27,7 @@ jobs:
           service_url: https://eu.cloud.appscan.com
           wait_for_analysis: true
       - name: Print repository diagnostic information
-        shell: powershell
+        shell: powershell.exe -NoProfile -ExectionPolicy Bypass {0}
         run: |
           Write-Host "===== REPOSITORY DIAGNOSTICS ====="
           Write-Host "GITHUB_SHA: $env:GITHUB_SHA"
