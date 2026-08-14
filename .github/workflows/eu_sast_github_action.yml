@@ -19,38 +19,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Run AppScan SAST scan
-        uses: HCL-TECH-SOFTWARE/appscan-sast-action@v1.1.1
+        uses: HCL-TECH-SOFTWARE/appscan-sast-action@Test_ASPL_2090
         with:
           asoc_key: ${{secrets.ASOC_KEY}}
           asoc_secret: ${{secrets.ASOC_SECRET}}
           application_id: 4b489cb2-ae9f-4aea-8079-9e37099ce87a
           service_url: https://eu.cloud.appscan.com
           wait_for_analysis: true
-      - name: Print repository diagnostic information
-        shell: powershell.exe -NoProfile -ExectionPolicy Bypass {0}
-        run: |
-          Write-Host "===== REPOSITORY DIAGNOSTICS ====="
-          Write-Host "GITHUB_SHA: $env:GITHUB_SHA"
-          Write-Host "GITHUB_REF: $env:GITHUB_REF"
-          Write-Host "GITHUB_REPOSITORY: $env:GITHUB_REPOSITORY"
-          Write-Host "RUNNER_OS: $env:RUNNER_OS"
-          Write-Host "RUNNER_ARCH: $env:RUNNER_ARCH"
-          Write-Host "RUNNER_NAME: $env:RUNNER_NAME"
-          Write-Host "===== GIT ====="
-          git --version
-          git status
-          git rev-parse HEAD
-          git log -1 --oneline
-          Write-Host "===== GIT CONFIG ====="
-          Write-Host "core.autocrlf:"
-          git config --get core.autocrlf
-          Write-Host "core.eol:"
-          git config --get core.eol
-          Write-Host "core.safecrlf:"
-          git config --get core.safecrlf
-          Write-Host "===== FILE COUNT ====="
-          $fileCount = @(git ls-files).Count
-          Write-Host "Tracked files: $fileCount"
-          Write-Host "===== SOURCE FILES ====="
-          git ls-files
-          Write-Host "================================"
