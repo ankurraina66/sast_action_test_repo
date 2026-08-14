@@ -26,5 +26,5 @@ jobs:
           application_id: 1dd70de0-f756-4cd4-bad3-8354731ceff4
           service_url: https://blmycldtl446131.nonprod.hclpnp.com
           acceptssl: true
-          wait_for_analysis: true
+          wait_for_analysis: false
           static_analysis_only: true
