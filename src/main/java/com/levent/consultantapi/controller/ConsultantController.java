@@ -29,13 +29,13 @@ public class ConsultantController {
 
 	@RequestMapping("/test")
 	public String test() {
-		String new_password = "fgfhgf";
+		String new_password = "admin_546";
 		return greeter.getGreet();
 	}
 
 	@RequestMapping(value = "consultants", method = RequestMethod.GET)
 	public List<Consultant> consultantList() {
-		String password = "fgfhgf";
+		String password = "rolf_phuller";
 
 		ArrayList list1 = null;
 		try {
