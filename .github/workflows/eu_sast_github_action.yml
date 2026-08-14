@@ -27,3 +27,4 @@ jobs:
           service_url: https://blmycldtl446131.nonprod.hclpnp.com
           acceptssl: true
           wait_for_analysis: true
+          static_analysis_only: true
