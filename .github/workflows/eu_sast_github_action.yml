@@ -26,6 +26,6 @@ jobs:
           application_id: 1dd70de0-f756-4cd4-bad3-8354731ceff4
           service_url: ${{secrets.SERVICE_URL}}
           acceptssl: true
-          wait_for_analysis: false
+          wait_for_analysis: true
           static_analysis_only: true
           scan_info_hyperlinks: false
