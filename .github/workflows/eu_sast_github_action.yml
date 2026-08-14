@@ -28,3 +28,4 @@ jobs:
           acceptssl: true
           wait_for_analysis: false
           static_analysis_only: true
+          scan_info_hyperlinks: false
