@@ -29,7 +29,7 @@ public class ConsultantController {
 
 	@RequestMapping("/test")
 	public String test() {
-		String new_password = "admin_546";
+		String new_password = "new_admin";
 		return greeter.getGreet();
 	}
 
