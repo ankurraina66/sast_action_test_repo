@@ -55,7 +55,7 @@ public class ConsultantController {
 		return consultantService.createConsultant(consultant);
 	}
 
-	@RequestMapping(value = "consultants/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "newconsultants/{id}", method = RequestMethod.GET)
 	public Consultant get(@PathVariable Long id) {
 		return consultantService.getConsultantById(id);
 	}
