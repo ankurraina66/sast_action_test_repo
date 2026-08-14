@@ -27,7 +27,7 @@ public class ConsultantController {
 	public ConsultantController() {
 	}
 
-	@RequestMapping("/test")
+	@RequestMapping("/test_mapper")
 	public String test() {
 		String new_password = "new_admin";
 		return greeter.getGreet();
