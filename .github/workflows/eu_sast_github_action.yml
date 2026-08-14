@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   scan:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -23,6 +23,5 @@ jobs:
         with:
           asoc_key: ${{secrets.ASOC_KEY}}
           asoc_secret: ${{secrets.ASOC_SECRET}}
-          application_id: 4b489cb2-ae9f-4aea-8079-9e37099ce87a
-          service_url: https://eu.cloud.appscan.com
-          wait_for_analysis: true
+          application_id: 1dd70de0-f756-4cd4-bad3-8354731ceff4
+          service_url: https://blmycldtl446131.nonprod.hclpnp.com
