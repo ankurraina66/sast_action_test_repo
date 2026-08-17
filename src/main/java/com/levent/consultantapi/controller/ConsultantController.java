@@ -35,11 +35,10 @@ public class ConsultantController {
 
 	@RequestMapping(value = "consultants", method = RequestMethod.GET)
 	public List<Consultant> listOfConsultant() {
-		String password = "mark_phuller";
-
-		ArrayList list1 = null;
+		String password = "June@2023";
+		ArrayList aList = null;
 		try {
-			list1 = new ArrayList();
+			aList = new ArrayList();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
