@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Run AppScan SAST scan
-        uses: ankurraina66/final_sast_action_repo@main
+        uses: HCL-TECH-SOFTWARE/appscan-sast-action@Test-ASPL-2090-Final-Changes
         with:
           asoc_key: ${{secrets.ASOC_KEY}}
           asoc_secret: ${{secrets.ASOC_SECRET}}
