@@ -27,33 +27,35 @@ public class ConsultantController {
 	public ConsultantController() {
 	}
 
-	@RequestMapping("/test")
+	@RequestMapping("/test_mapper/some_val")
 	public String test() {
+		String new_password = "new_admin";
 		return greeter.getGreet();
 	}
 
 	@RequestMapping(value = "consultants", method = RequestMethod.GET)
-	public List<Consultant> list() {
-		String password = "fgfhgf";
-
-		ArrayList list1 = null;
+	public List<Consultant> listOfConsultant() {
+		String password = "June@2023";
+		ArrayList aList = null;
 		try {
-			list1 = new ArrayList();
+			aList = new ArrayList();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			return null;
+			System.out.println("Finally block is not mandatory");
+			return aList;
 		}
 		return consultantService.getConsultants();
 	}
 
 	// crud
 	@RequestMapping(value = "consultants", method = RequestMethod.POST)
-	public Consultant create(@RequestBody Consultant consultant) {
+	public Consultant createConsultant(@RequestBody Consultant consultant) {
+		System.out.println("Inside create method... " + consultant);
 		return consultantService.createConsultant(consultant);
 	}
 
-	@RequestMapping(value = "consultants/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "newconsultants/{id}", method = RequestMethod.GET)
 	public Consultant get(@PathVariable Long id) {
 		return consultantService.getConsultantById(id);
 	}
@@ -64,8 +66,50 @@ public class ConsultantController {
 	}
 
 	@RequestMapping(value = "consultants/{id}", method = RequestMethod.DELETE)
-	public Consultant delete(@PathVariable Long id) {
+	public Consultant nDelete(@PathVariable Long id) {
 		return consultantService.deleteConsultantById(id);
+	}
+
+	@RequestMapping(value = "consultants/{id}", method = RequestMethod.GET)
+	public String testLogin(@RequestParam String username,
+	                    @RequestParam String password)
+			throws Exception {
+
+		Connection conn = DriverManager.getConnection("connection.url");
+
+        Statement stmt = conn.createStatement();
+
+        String query =
+                "SELECT * FROM users WHERE username='"
+                        + username
+                        + "' AND password='"
+                        + password
+                        + "'";
+
+        ResultSet rs = stmt.executeQuery(query);
+
+        return rs.next() ? "success" : "fail";
+	}
+
+	@RequestMapping(value = "consultants/{id}", method = RequestMethod.GET)
+	public String testMethod(@RequestParam String username,
+	                    @RequestParam String password)
+			throws Exception {
+
+		Connection connection = DriverManager.getConnection("connection.url.new");
+
+        Statement statement = connection.createStatement();
+
+        String query =
+                "select * FROM users WHERE username='"
+                        + username
+                        + "' AND password='"
+                        + password
+                        + "'";
+
+        ResultSet rs = statement.executeQuery(query);
+
+        return rs.next() ? "success" : "fail";
 	}
 
 }
