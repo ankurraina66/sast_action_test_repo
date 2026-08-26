@@ -42,7 +42,7 @@ public class ConsultantController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			System.out.println("Inside finally block which will always be executed...");
+			System.out.println("Finally block is not mandatory");
 			return null;
 		}
 		return consultantService.getConsultants();
