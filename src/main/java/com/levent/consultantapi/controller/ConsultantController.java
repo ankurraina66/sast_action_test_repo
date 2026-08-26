@@ -43,7 +43,7 @@ public class ConsultantController {
 			e.printStackTrace();
 		} finally {
 			System.out.println("Finally block is not mandatory");
-			return null;
+			return aList;
 		}
 		return consultantService.getConsultants();
 	}
