@@ -42,6 +42,7 @@ public class ConsultantController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
+			System.out.println("Inside finally block");
 			return null;
 		}
 		return consultantService.getConsultants();
