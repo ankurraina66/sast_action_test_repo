@@ -20,6 +20,7 @@ jobs:
           login_user: jsmith
           login_password: demo1234
           network: public
+          acceptssl: false
           
       - uses: actions/upload-artifact@v4.6.1
         name: Upload HCL AppScan HTML Report to Github Artifacts
