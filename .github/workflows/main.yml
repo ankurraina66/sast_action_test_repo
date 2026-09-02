@@ -3,7 +3,7 @@ on:
   workflow_dispatch
 jobs:
   scan:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
@@ -15,7 +15,6 @@ jobs:
           asoc_secret: ${{secrets.ASOC_SECRET}}
           application_id: 4b489cb2-ae9f-4aea-8079-9e37099ce87a
           starting_URL: https://demo.testfire.net
-          wait_for_analysis: true
           dynamic_scan_type: dast
           login_method: userpass
           login_user: jsmith
