@@ -8,7 +8,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.2.2
       - name: Run ASoC DAST Scan
-        uses: HCL-TECH-SOFTWARE/appscan-dast-action@test-dast
+        uses: HCL-TECH-SOFTWARE/appscan-dast-action@bug-fix
         
         with:
           baseurl:  https://blmycldtl446131.nonprod.hclpnp.com
@@ -20,7 +20,7 @@ jobs:
           login_method: userpass
           login_user: jsmith
           login_password: demo1234
-          acceptssl: ${{secrets.ACCEPTSSL}}
+          acceptssl: true
           
           
       - uses: actions/upload-artifact@v4.6.1
