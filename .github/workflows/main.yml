@@ -20,7 +20,8 @@ jobs:
           login_method: userpass
           login_user: jsmith
           login_password: demo1234
-          email_notification: true
+          email_notification: false
+          wait_for_analysis: true
                    
           
       - uses: actions/upload-artifact@v4.6.1
