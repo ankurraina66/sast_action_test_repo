@@ -11,17 +11,18 @@ jobs:
         uses: HCL-TECH-SOFTWARE/appscan-dast-action@bug-fix
         
         with:
-          baseurl:  https://eu.cloud.appscan.com
+          baseurl:  https://blmycldtl446131.nonprod.hclpnp.com
           asoc_key: ${{secrets.ASOC_KEY}}
           asoc_secret: ${{secrets.ASOC_SECRET}}
-          application_id: 4b489cb2-ae9f-4aea-8079-9e37099ce87a
+          application_id: 1dd70de0-f756-4cd4-bad3-8354731ceff4
           starting_URL: https://demo.testfire.net
           dynamic_scan_type: dast
           login_method: userpass
           login_user: jsmith
           login_password: demo1234
-          email_notification: false
+          email_notification: true
           wait_for_analysis: true
+          acceptssl: true
                    
           
       - uses: actions/upload-artifact@v4.6.1
