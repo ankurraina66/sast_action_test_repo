@@ -17,10 +17,9 @@ jobs:
           application_id: 4b489cb2-ae9f-4aea-8079-9e37099ce87a
           starting_URL: https://demo.testfire.net
           dynamic_scan_type: dast
-          login_method: userpass
-          login_user: jsmith
-          login_password: demo1234
-          ephemeral_presence: true                   
+          login_method: recorded
+          network: public
+          login_sequence_file: './config/DTF_Login_NewHTTPS.dast.config'                 
           
       - uses: actions/upload-artifact@v4.6.1
         name: Upload HCL AppScan HTML Report to Github Artifacts
