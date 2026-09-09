@@ -15,7 +15,7 @@ import com.levent.consultantapi.service.ConsultantService;
 import com.levent.consultantapi.service.InfoService;
 
 @RestController
-@RequestMapping("api/v1.1/")
+@RequestMapping("api/v1.2/")
 public class ConsultantController {
 
 	@Autowired
