@@ -1,4 +1,4 @@
-name: "HCL AppScan SAST for ASoC EU Instance"
+name: "HCL AppScan SAST for AS 360"
 on:
   workflow_dispatch:
 
@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   scan:
-    runs-on: windows-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout
         uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26
@@ -23,6 +23,8 @@ jobs:
         with:
           asoc_key: ${{secrets.ASOC_KEY}}
           asoc_secret: ${{secrets.ASOC_SECRET}}
-          application_id: 4b489cb2-ae9f-4aea-8079-9e37099ce87a
-          service_url: https://eu.cloud.appscan.com
+          application_id: 1dd70de0-f756-4cd4-bad3-8354731ceff4
+          service_url: https://blmycldtl446131.nonprod.hclpnp.com
           wait_for_analysis: true
+          static_analysis_only: true
+          acceptssl: true
