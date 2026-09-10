@@ -1,4 +1,4 @@
-name: "HCL AppScan SAST for AS 360"
+name: "HCL AppScan SAST"
 on:
   workflow_dispatch:
 
@@ -23,8 +23,8 @@ jobs:
         with:
           asoc_key: ${{secrets.ASOC_KEY}}
           asoc_secret: ${{secrets.ASOC_SECRET}}
-          application_id: 1dd70de0-f756-4cd4-bad3-8354731ceff4
-          service_url: https://blmycldtl446131.nonprod.hclpnp.com
+          application_id: 605d486f-3dba-40ba-a565-638a2ffe93f7
+          service_url: https://blmycldtl446131.appscan-test.local
           wait_for_analysis: true
           static_analysis_only: true
           acceptssl: true
