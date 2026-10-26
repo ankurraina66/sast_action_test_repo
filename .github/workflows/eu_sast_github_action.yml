@@ -23,19 +23,19 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Check runner Node.js version
-        shell: bash
+        shell: powershell
         run: |
-          echo "Node.js version available on PATH:"
+          Write-Host "Node.js version available on PATH:"
           node --version
 
-          echo "Node.js executable on PATH:"
-          which node
+          Write-Host "Node.js executable on PATH:"
+          (Get-Command node).Source
 
-          echo "Runner operating system:"
-          uname -a
+          Write-Host "Runner OS:"
+          $env:RUNNER_OS
 
-          echo "Runner name:"
-          echo "${RUNNER_NAME:-unknown}"
+          Write-Host "Runner name:"
+          $env:RUNNER_NAME
 
       - name: Run AppScan SAST scan
         uses: HCL-TECH-SOFTWARE/appscan-sast-action@test/cve-2026-111497
