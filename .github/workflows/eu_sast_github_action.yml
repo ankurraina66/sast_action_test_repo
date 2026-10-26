@@ -45,3 +45,4 @@ jobs:
           application_id: 605d486f-3dba-40ba-a565-638a2ffe93f7
           service_url: https://blmycldtl446131.appscan-test.local
           acceptssl: true
+          static_analysis_only: true
