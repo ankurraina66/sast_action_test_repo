@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   scan:
-    runs-on: windows-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout
@@ -40,6 +40,8 @@ jobs:
       - name: Run AppScan SAST scan
         uses: HCL-TECH-SOFTWARE/appscan-sast-action@test/cve-2026-111497
         with:
-          asoc_key: ab3f2a5f-00f6-21a5-30ee-853650a51b8e
-          asoc_secret: Ieuy2iZ0tkwrslDmBEMPCWtXmIuJyZu2T07KRVjbx+Zp
-          application_id: a892fce6-630b-44b4-8f47-d6f6f7d63be5
+          asoc_key: local_74712b95-ca2a-4dd5-0af7-84ce5c30374c
+          asoc_secret: WjMnJaEmElIkIGbPBzZsKzEZghUliAMFo4YOpAN4kJdQ
+          application_id: 605d486f-3dba-40ba-a565-638a2ffe93f7
+          service_url: https://blmycldtl446131.appscan-test.local
+          acceptssl: true
