@@ -1,10 +1,12 @@
 name: "HCL AppScan SAST"
+
 on:
   workflow_dispatch:
 
   push:
     branches:
       - main
+
   pull_request:
 
 permissions:
@@ -14,17 +16,30 @@ permissions:
 
 jobs:
   scan:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
-        uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26
+        uses: actions/checkout@v6
+
+      - name: Check runner Node.js version
+        shell: bash
+        run: |
+          echo "Node.js version available on PATH:"
+          node --version
+
+          echo "Node.js executable on PATH:"
+          which node
+
+          echo "Runner operating system:"
+          uname -a
+
+          echo "Runner name:"
+          echo "${RUNNER_NAME:-unknown}"
+
       - name: Run AppScan SAST scan
-        uses: HCL-TECH-SOFTWARE/appscan-sast-action@3153cfb62e24c1ef4c906412aac7f868c83576c6
+        uses: HCL-TECH-SOFTWARE/appscan-sast-action@test/cve-2026-111497
         with:
-          asoc_key: ${{secrets.ASOC_KEY}}
-          asoc_secret: ${{secrets.ASOC_SECRET}}
-          application_id: 605d486f-3dba-40ba-a565-638a2ffe93f7
-          service_url: https://blmycldtl446131.appscan-test.local
-          wait_for_analysis: true
-          static_analysis_only: true
-          acceptssl: true
+          asoc_key: ab3f2a5f-00f6-21a5-30ee-853650a51b8e
+          asoc_secret: Ieuy2iZ0tkwrslDmBEMPCWtXmIuJyZu2T07KRVjbx+Zp
+          application_id: a892fce6-630b-44b4-8f47-d6f6f7d63be5
