@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Run AppScan SAST scan
-        uses: HCL-TECH-SOFTWARE/appscan-sast-action@fix-cve-2026-109869-109924-client-type
+        uses: HCL-TECH-SOFTWARE/appscan-sast-action@main
         with:
           asoc_key: ab3f2a5f-00f6-21a5-30ee-853650a51b8e
           asoc_secret: Ieuy2iZ0tkwrslDmBEMPCWtXmIuJyZu2T07KRVjbx+Zp
