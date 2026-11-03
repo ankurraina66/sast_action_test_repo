@@ -13,7 +13,7 @@ jobs:
           asoc_key: ${{secrets.ASOC_KEY}}
           asoc_secret: ${{secrets.ASOC_SECRET}}
           application_id: ${{ secrets.APPLICATION_ID }}
-          service_url: https://eu.cloud.appscan.com
+          service_url: https://cloud.appscan.com
           static_analysis_only: true
           open_source_only: false
           scan_name: "SAST ${{ steps.date.outputs.date }} Incremental scan Clienttype check eu"
