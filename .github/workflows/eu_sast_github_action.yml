@@ -31,4 +31,4 @@ jobs:
           service_url: https://cloud.appscan.com
           static_analysis_only: true
           scan_name: ${{ env.SCAN_NAME }}
-          sast_scan_id: 5027661b-57e9-4bbc-811c-96cc98e0149b
+          
