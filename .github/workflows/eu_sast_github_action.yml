@@ -32,5 +32,5 @@ jobs:
           static_analysis_only: true
           acceptssl: true
           scan_name: ${{ env.SCAN_NAME }}
-          sast_scan_id: 5d891cf19-1045-479f-b3be-d07405d48d44
+          sast_scan_id: d891cf19-1045-479f-b3be-d07405d48d44
       
