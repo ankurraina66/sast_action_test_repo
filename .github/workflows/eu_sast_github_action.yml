@@ -27,5 +27,4 @@ jobs:
           service_url: https://cloud.appscan.com
           static_analysis_only: true
           wait_for_analysis: true
-          scan_name: new_scan_name_231126
-          sast_scan_id: ab7b61ed-c190-48cd-8559-932fdfdf43e4
+          
