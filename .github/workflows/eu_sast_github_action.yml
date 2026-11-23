@@ -13,7 +13,7 @@ permissions:
   issues: write
 
 env:
-  SCAN_NAME: Update_Name_Scan_Update_1
+  SCAN_NAME: Update_Name_Scan_Update_2
 
 jobs:
   scan:
