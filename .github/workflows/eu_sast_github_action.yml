@@ -11,8 +11,6 @@ permissions:
   contents: read
   pull-requests: write
   issues: write
-env:
-  SCAN_NAME: test_Scan_Update
 
 jobs:
   scan:
@@ -27,7 +25,5 @@ jobs:
           asoc_secret: ${{secrets.ASOC_SECRET}}
           application_id: b2ec76ec-a0a3-468f-a80b-f1b2a0c2c1fb
           service_url: https://cloud.appscan.com
-          static_analysis_only: true
           wait_for_analysis: true
-          scan_name: ${{ env.SCAN_NAME }}
-          sast_scan_id: c3391900-0f63-4519-a694-857cc06e1957
+    
