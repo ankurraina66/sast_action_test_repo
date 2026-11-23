@@ -11,6 +11,8 @@ permissions:
   contents: read
   pull-requests: write
   issues: write
+env:
+  SCAN_NAME: Update_Name_Scan_Update
 
 jobs:
   scan:
@@ -26,4 +28,5 @@ jobs:
           application_id: b2ec76ec-a0a3-468f-a80b-f1b2a0c2c1fb
           service_url: https://cloud.appscan.com
           wait_for_analysis: true
-    
+          scan_name: ${{ env.SCAN_NAME }}
+          sca_scan_id: 505cbece-d4a5-41c3-bff3-401b06034317
