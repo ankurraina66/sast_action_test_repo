@@ -12,6 +12,9 @@ permissions:
   pull-requests: write
   issues: write
 
+env:
+  SCAN_NAME: Update_Name_Scan_Update_1
+
 jobs:
   scan:
     runs-on: self-hosted
@@ -28,4 +31,6 @@ jobs:
           wait_for_analysis: true
           static_analysis_only: true
           acceptssl: true
+          scan_name: ${{ env.SCAN_NAME }}
+          sast_scan_id: 5d891cf19-1045-479f-b3be-d07405d48d44
       
