@@ -1,4 +1,4 @@
-name: "HCL AppScan SAST for AppScan 360 Instance"
+name: "HCL AppScan SAST"
 on:
  workflow_dispatch: 
 jobs:
@@ -8,17 +8,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Run AppScan SAST scan
-        uses: HCL-TECH-SOFTWARE/appscan-sast-action@main
+        uses: HCL-TECH-SOFTWARE/appscan-sast-action@PRB_0181241_Bug_Fixes
         with:
           asoc_key: ${{secrets.ASOC_KEY}}
           asoc_secret: ${{secrets.ASOC_SECRET}}
-          application_id: ${{ secrets.APPLICATION_ID }}
+          application_id: b2ec76ec-a0a3-468f-a80b-f1b2a0c2c1fb
           service_url: https://cloud.appscan.com
           static_analysis_only: true
-          open_source_only: false
-          scan_name: "SAST ${{ steps.date.outputs.date }} Incremental scan Clienttype check eu"
-          personal_scan: false
-          wait_for_analysis: true
-          incremental_scan: false
-          fail_for_noncompliance: false
-          failure_threshold: High
