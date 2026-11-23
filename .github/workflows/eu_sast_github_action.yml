@@ -26,3 +26,5 @@ jobs:
           application_id: b2ec76ec-a0a3-468f-a80b-f1b2a0c2c1fb
           service_url: https://cloud.appscan.com
           static_analysis_only: true
+          scan_name: updated_scan_name_231126
+          sast_scan_id: 927efd6c-cd17-495c-a6fc-b1d8fcb1f681
