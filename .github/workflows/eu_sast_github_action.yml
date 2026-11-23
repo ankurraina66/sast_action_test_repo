@@ -11,22 +11,20 @@ permissions:
   contents: read
   pull-requests: write
   issues: write
-env:
-  SCAN_NAME: Update_Name_Scan_Update
 
 jobs:
   scan:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Run AppScan SAST scan
         uses: HCL-TECH-SOFTWARE/appscan-sast-action@PRB_0181241_Bug_Fixes
         with:
-          asoc_key: ${{secrets.ASOC_KEY}}
-          asoc_secret: ${{secrets.ASOC_SECRET}}
-          application_id: b2ec76ec-a0a3-468f-a80b-f1b2a0c2c1fb
-          service_url: https://cloud.appscan.com
-          wait_for_analysis: true
-          scan_name: ${{ env.SCAN_NAME }}
-          sca_scan_id: 505cbece-d4a5-41c3-bff3-401b06034317
+          asoc_key: local_74712b95-ca2a-4dd5-0af7-84ce5c30374c
+          asoc_secret: WjMnJaEmElIkIGbPBzZsKzEZghUliAMFo4YOpAN4kJdQ
+          application_id: 605d486f-3dba-40ba-a565-638a2ffe93f7
+          service_url: https://blmycldtl446131.appscan-test.local
+          wait_for_analysis: false
+          static_analysis_only: true
+          acceptssl: true
