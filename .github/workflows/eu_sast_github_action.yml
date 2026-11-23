@@ -12,9 +12,6 @@ permissions:
   pull-requests: write
   issues: write
 
-env:
-  SCAN_NAME: New_Scan_Name_Update
-
 jobs:
   scan:
     runs-on: windows-latest
@@ -30,6 +27,5 @@ jobs:
           service_url: https://cloud.appscan.com
           wait_for_analysis: true
           static_analysis_only: true
-          scan_name: ${{ env.SCAN_NAME }}
-          sast_scan_id: 09b19fc6-2087-4fba-8b29-a700f819f39e
+          analysis_timeout_minutes: 1
             
