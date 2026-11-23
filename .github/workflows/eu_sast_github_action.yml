@@ -12,9 +12,6 @@ permissions:
   pull-requests: write
   issues: write
 
-env:
-  SCAN_NAME: Update_Name_Scan_Update
-
 jobs:
   scan:
     runs-on: self-hosted
@@ -28,8 +25,7 @@ jobs:
           asoc_secret: WjMnJaEmElIkIGbPBzZsKzEZghUliAMFo4YOpAN4kJdQ
           application_id: 605d486f-3dba-40ba-a565-638a2ffe93f7
           service_url: https://blmycldtl446131.appscan-test.local
-          wait_for_analysis: false
+          wait_for_analysis: true
           static_analysis_only: true
           acceptssl: true
-          scan_name: ${{ env.SCAN_NAME }}
-          sast_scan_id: c0cc6974-6bb1-43a3-ab6b-9a4792bb356e
+      
