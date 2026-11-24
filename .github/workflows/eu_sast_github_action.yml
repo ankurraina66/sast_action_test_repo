@@ -12,6 +12,9 @@ permissions:
   pull-requests: write
   issues: write
 
+env:
+  FORCE_STATUS_401_ONCE: "true"
+
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -26,5 +29,4 @@ jobs:
           application_id: b2ec76ec-a0a3-468f-a80b-f1b2a0c2c1fb
           service_url: https://cloud.appscan.com
           wait_for_analysis: true
-          analysis_timeout_minutes: 1
-          static_analysis_only: true
+        
